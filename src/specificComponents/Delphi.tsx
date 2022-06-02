@@ -20,19 +20,23 @@ export default () => {
 
     const enterClassName = (input: string) => {
         const entered = input.split(' ');
-        if (entered.length === 2 && entered[1] === 'eval') {
+        if (entered.length === 2 && entered[1] === 'comment') {
             setIsEval(true);
             input = entered[0]
         }
-        if (entered.length === 2 && entered[1] === 'rate') {
+        else if (entered.length === 2 && entered[1] === 'rate') {
             setApproved(true);
             input = entered[0]
         }
-        if (entered.length === 2 && entered[1] === 'show') {
+        else if (entered.length === 2 && entered[1] === 'show') {
             setApproved(true);
             setCommentDone(true);
             input = entered[0]
         }
+        else if (entered.length === 2 ) {
+            alert("Den kommando findes ikke i systemet")
+        }
+    
         facade.fetchAny('classname/' + input, (res) => {
             if (res === true) {
                 setClassName(input);
@@ -43,7 +47,7 @@ export default () => {
         }, () => { })
     }
     return (
-        <Container maxWidth="md">
+        <Container maxWidth="lg">
             <Typography variant="h2">Delphi Evaluering</Typography>
             {className.length === 0 ? <ClassChoice className={className} enterClassName={enterClassName} /> : <Typography variant="h4">Klasse: {className}</Typography>}
             {isEval && className.length !== 0 && <CommentFormList className={className} commentDone={commentDone} setCommentDone={setCommentDone} />}

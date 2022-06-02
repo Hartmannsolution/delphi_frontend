@@ -19,11 +19,17 @@ The project is using typescript
 - When importing a 3rd party tool to typescript app, also import the data types: `npm install uuid && npm install -D @types/uuid`
   - https://stackoverflow.com/questions/41292559/could-not-find-a-declaration-file-for-module-module-name-path-to-module-nam
 
-## How to use
+## How to use (Student)
 1. Write a class name (that is first created by the teacher)
 2. Fill out 3 positive and 3 negative answers and submit
-3. Load all answers and rate them
+3. Load all answers and rate them (Use the button, that became visible after submitting answers)
 4. As a teacher enter the page a new and give "<classname> eval" to start the class discussion portion with comments on the answers.
+
+## How to use (Student or Teacher)
+1. Write a class name and a space followed by:
+  - `comment`: to add comments to the evaluation
+  - `rate`: to rate answers by the other students
+  - `show`: to show answers with comments by the other students
 
 ## Deploy React Router App to nginx
 [See context here](https://stackoverflow.com/questions/53207059/react-nginx-routing-to-subdirectory)  
