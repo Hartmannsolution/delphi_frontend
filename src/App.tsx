@@ -1,16 +1,11 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Demo from './components/mat_ui';
+import Delphi from './specificComponents/Delphi';
 
-function App() {
+const App = () => {
   const [count, setCount] = useState(0)
-
-  return (
-    <div className="App">
-    <Demo/>
-    </div>
-  )
+  return <div className="App"><Delphi/></div>
 }
 
 export default App
